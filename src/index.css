@@ -2,4 +2,95 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url("http://eskipaper.com/images/football-wallpaper-30.jpg");
+}
+
+.Twitter-widget {
+ position:absolute;
+ bottom:0;
+
+}
+
+.TwitList {
+  margin-right: 380px;
+  margin-left: 800px;
+  margin-top: 80px;
+
+
+}
+
+.Tweets {
+  width: 470px;
+    height: 465px;
+    overflow: scroll;
+    align-items: center;
+    border: solid gold;
+    margin-bottom: 40px;
+    background-color: white;
+}
+
+p {
+  color: black;
+
+
+}
+
+header {
+  margin-right: 380px;
+  margin-left: 530px;
+  color: white;
+  font-size: 22px;
+
+}
+
+h1 {
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.marquee-container {
+  width: 1290px;
+  overflow: hidden;
+  white-space: nowrap;
+
+}
+
+.marquee {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+
+.marqueeScroll {
+  -webkit-animation: marqueeScroll linear 9s infinite;
+}
+@-webkit-keyframes marqueeScroll {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: -1 * ($marqueeWidth + $marqueePadding *2);
+  }
+}
+
+
+#button {
+margin-left: 185px;
+}
+
+#tweedr-input {
+margin-left: 150px;
+margin-bottom: 20px;
+
+
+}
+
+.Delete {
+  margin-left: 270px;
+  position: fixed;
+}
+
+.Edit {
+  margin-left: 230px;
+  position: fixed;
 }
