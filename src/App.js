@@ -69,14 +69,12 @@ class App extends Component {
           })
   }
 
-  deleteRequest(tweeds) {
-    const url = 'https://soccer-arts-blog.firebaseio.com/posts/${tweeds}/.json';
+  deleteRequest(tweed) {
+    const url = `https://soccer-arts-blog.firebaseio.com/posts/${tweed}/.json`;
 
     axios.delete(url)
     .then((res) => {
-      let posts = this.state.posts;
-      delete posts[tweeds];
-      this.setState({ posts: posts});
+      this.setState({ post: tweed});
     });
   }
 
@@ -105,6 +103,7 @@ class App extends Component {
         <Comments
           id="test"
           tweeds={this.state.tweeds}
+          deleteRequest={this.deleteRequest}
         />
           </div>
         </div>

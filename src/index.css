@@ -2,12 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url("http://eskipaper.com/images/football-wallpaper-30.jpg");
+  background: url("http://wallpapermonkey.com/wp-content/uploads/2016/11/hd-soccer-wallpapers-HD3.jpg");
 }
 
 .Twitter-widget {
  position:absolute;
  bottom:0;
+ height: 560px;
 
 }
 
@@ -40,6 +41,7 @@ header {
   margin-left: 530px;
   color: white;
   font-size: 22px;
+  font-family: georgia, serif;
 
 }
 
@@ -87,10 +89,12 @@ margin-bottom: 20px;
 
 .Delete {
   margin-left: 270px;
-  position: fixed;
+  position: static;
+  background-color: red;
 }
 
 .Edit {
   margin-left: 230px;
-  position: fixed;
+  position: static;
+  background-color: green;
 }

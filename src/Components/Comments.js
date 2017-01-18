@@ -8,9 +8,10 @@ class Comments extends Component {
 
   render() {
     let Comments = this.props.tweeds.map((tweed, i) => {
+      console.log(this.props.tweeds);
       return (
         <p key={i}>{tweed.post}<button className="Edit">Edit</button>
-          <button className="Delete" >Delete</button></p>
+          <button className="Delete" onClick={()=> this.props.deleteRequest(tweed)}>Delete</button></p>
       );
     });
     return (
