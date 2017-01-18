@@ -18,7 +18,8 @@ class App extends Component {
 
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
-  this.deleteRequest = this.deleteRequest.bind(this)
+  this.deleteRequest = this.deleteRequest.bind(this);
+  this.patchRequest = this.patchRequest.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,7 @@ class App extends Component {
             tweeds = Object.keys(data).map((id) => {
               const tweed = data[id];
               return {
+                id: id,
                 post: tweed.post
               };
             });
@@ -70,13 +72,30 @@ class App extends Component {
   }
 
   deleteRequest(tweed) {
-    const url = `https://soccer-arts-blog.firebaseio.com/posts/${tweed}/.json`;
+    const url = `https://soccer-arts-blog.firebaseio.com/posts/${tweed.id}/.json`;
 
     axios.delete(url)
     .then((res) => {
-      this.setState({ post: tweed});
+      this.getRequest();
     });
   }
+
+
+
+  patchRequest(tweed) {
+  const url = `https://soccer-arts-blog.firebaseio.com/posts/${tweed.id}/.json`;
+
+  axios.patch(url, {
+    post: this.state.value
+  })
+  .then((response) => {
+      this.getRequest();
+
+  })
+}
+
+
+
 
   handleChange(e) {
     this.setState({ value: e.target.value });
@@ -85,6 +104,8 @@ class App extends Component {
     e.preventDefault();
     this.postRequest();
   }
+
+
 
 
   render() {
@@ -104,6 +125,7 @@ class App extends Component {
           id="test"
           tweeds={this.state.tweeds}
           deleteRequest={this.deleteRequest}
+          patchRequest={this.patchRequest}
         />
           </div>
         </div>
